@@ -157,6 +157,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "switcher:퀵 스위처 열기": false,
       "daily-notes:오늘의 데일리 노트 열기": false,
       "graph:그래프 뷰 열기": false,
