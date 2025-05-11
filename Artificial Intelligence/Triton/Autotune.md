@@ -5,10 +5,10 @@
 - `@triton.autotune` 데코레이터를 통해 커널 함수에 적용
 - pre-hook을 포함한 설정도 가능
 	```python
-	@triton.autotune(
-		configs=matmul_get_configs(pre_hook=matmul_tma_set_block_size_hook),
-		key=["M", "N", "K", "WARP_SPECIALIZE"],
-	)
+@triton.autotune(
+	configs=matmul_get_configs(pre_hook=matmul_tma_set_block_size_hook),
+	key=["M", "N", "K", "WARP_SPECIALIZE"],
+)
 ```
 ## Autotune 실행 과정
 - python/triton/runtime/autotuner.py에 구현되어 있음
