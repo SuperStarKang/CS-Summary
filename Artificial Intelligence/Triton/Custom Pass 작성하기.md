@@ -10,6 +10,7 @@
 - `lib/Dialect/Triton/Transforms/` 디렉토리에 `AddToMulConversion.cpp` 작성
 ### Step 2: Register the Pass
 - `include/triton/Dialect/Triton/Transforms/Passes.h`헤더 파일에 Pass 등록
+- `include/triton/Dialect/Triton/Transforms/Passes.td` 테이블 파일에 Pass 등록
 ### Step 3: Add the Pass to the Compilation Pipeline
 ### Step 4: Expose the Pass to Python
 ### Step 5: Use the Pass in Python
