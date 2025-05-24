@@ -31,4 +31,4 @@
 - The backend can leverage specialized CPU features:
     - AMX (Advanced Matrix Extensions) on newer Intel CPUs
     - FMA (Fused Multiply-Add) instructions
-    - Optimized libraries (OneDNN, XSMM) for common operations
+- Optimized libraries (OneDNN, XSMM) for common operationsg
