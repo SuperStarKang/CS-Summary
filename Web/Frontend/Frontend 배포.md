@@ -37,7 +37,7 @@ RUN npm install -g pnpm
 
 # 2. 의존성 설치
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install
 
 # 3. 소스 복사 (실제 빌드는 compose에서 진행)
 COPY . .
@@ -71,8 +71,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    depends_on:
-      - frontend-prod
+    volumes:
+	  - ./nginx/html:/usr/share/nginx/html
     networks:
       - app-network
 
@@ -104,9 +104,6 @@ COPY ./conf.d/default.conf /etc/nginx/conf.d/default.conf
 
 # SSL 인증서 (certbot 등으로 발급 받은 경우)
 COPY ./ssl /etc/nginx/ssl
-
-# 정적 빌드 결과물 복사 (frontend-prod가 ./nginx/html에 복사해둔 상태)
-COPY ./html /usr/share/nginx/html
 ```
 
 ### 5. 실행 과정
